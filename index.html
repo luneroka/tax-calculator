@@ -3,6 +3,12 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
     <link rel="stylesheet" href="styles.css" />
     <title>Calculateur d'impôt foncier</title>
   </head>
@@ -12,47 +18,53 @@
       <div id="infos">
         <table>
           <thead>
-            <th>Prix d'achat</th>
-            <th></th>
+            <th class="infos-section" colspan="3">Prix d'achat</th>
           </thead>
           <tbody>
             <tr>
-              <td>Prix du bien</td>
-              <td><input type="number" value="207000" /></td>
+              <td class="row-type">Prix du bien</td>
+              <td class="row-value"><input type="number" value="207000" /></td>
+              <td class="unit">€</td>
             </tr>
             <tr>
-              <td>Frais de notaire</td>
-              <td><input type="number" value="207000" /></td>
+              <td class="row-type">Frais de notaire</td>
+              <td class="row-value"><input type="number" value="8500" /></td>
+              <td class="unit">€</td>
             </tr>
             <tr>
-              <td>Prix d'achat</td>
-              <td>215500</td>
+              <td class="row-type">Prix d'achat</td>
+              <td class="row-value"><input type="number" value="215500" /></td>
+              <td class="unit">€</td>
             </tr>
           </tbody>
           <thead>
-            <th>Emprunt</th>
-            <th></th>
+            <th class="infos-section" colspan="3">Emprunt</th>
           </thead>
           <tbody>
             <tr>
-              <td>Apport</td>
-              <td>8500</td>
+              <td class="row-type">Apport</td>
+              <td class="row-value"><input type="number" value="8500" /></td>
+              <td class="unit">€</td>
             </tr>
             <tr>
-              <td>Montant emprunté</td>
-              <td>207000</td>
+              <td class="row-type">Montant emprunté</td>
+              <td class="row-value"><input type="number" value="207000" /></td>
+              <td class="unit">€</td>
             </tr>
             <tr>
-              <td>Durée (ans)</td>
-              <td>25</td>
+              <td class="row-type">Durée</td>
+              <td class="row-value"><input type="number" value="25" /></td>
+              <td class="unit">ans</td>
             </tr>
             <tr>
-              <td>Taux</td>
-              <td>1,15%</td>
+              <td class="row-type">Taux</td>
+              <td class="row-value"><input type="text" value="1,15" /></td>
+              <td class="unit">%</td>
             </tr>
             <tr>
-              <td>Mensualités</td>
-              <td>794€</td>
+              <td class="row-type">Mensualités</td>
+              <td class="row-value"><input type="number" value="794" /></td>
+              <td class="unit">€</td>
             </tr>
           </tbody>
         </table>
@@ -61,60 +73,81 @@
       <div id="rentabilite">
         <table>
           <thead>
-            <th>Loyer</th>
-            <th>2025</th>
+            <th class="rentabilite-section">Loyer</th>
+            <th colspan="2">2025</th>
           </thead>
           <tbody>
             <tr>
-              <td class="row-type">Loyer mensuel</td>
-              <td class="row-value" id="loyer"></td>
+              <td class="row-type">Loyer mensuel HC</td>
+              <td class="row-value" id="loyer">
+                <input type="number" value="835" />
+              </td>
+              <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Charges locatives mensuelles</td>
-              <td class="row-value" id="charges-locatives-mensuelles"></td>
+              <td class="row-value" id="charges-locatives-mensuelles">
+                <input type="number" value="70" />
+              </td>
+              <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Revenus locatifs annuels HC</td>
-              <td class="row-value" id="revenus-locatifs-annuels-hc"></td>
+              <td class="row-value" id="revenus-locatifs-annuels-hc">
+                <input type="number" value="10020" />
+              </td>
+              <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Revenus locatifs annuels CC</td>
-              <td class="row-value" id="revenus-locatifs-annuels-cc"></td>
+              <td class="row-value" id="revenus-locatifs-annuels-cc">
+                <input type="number" value="10860" />
+              </td>
+              <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Charges de copro. annuelles</td>
-              <td class="row-value" id='"charges-copro-annuelles'></td>
+              <td class="row-value" id='"charges-copro-annuelles'>
+                <input type="number" value="814" />
+              </td>
+              <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Taxe foncière</td>
-              <td class="row-value" id='"taxe-fonciere'></td>
+              <td class="row-value" id='"taxe-fonciere'>
+                <input type="number" value="301" />
+              </td>
+              <td class="unit">€</td>
             </tr>
           </tbody>
           <thead>
-            <th>Impôts</th>
-            <th></th>
+            <th class="rentabilite-section" colspan="3">Impôts</th>
           </thead>
           <tbody>
             <tr>
               <td class="row-type">TMI</td>
               <td class="row-value">
                 <select name="tmi" id="tmi-selector">
-                  <option value="0">0%</option>
-                  <option value="0.11">11%</option>
-                  <option value="0.3">30%</option>
-                  <option value="0.41">41%</option>
-                  <option value="0.45">45%</option>
+                  <option value=""></option>
+                  <option value="0">0</option>
+                  <option value="0.11">11</option>
+                  <option value="0.3">30</option>
+                  <option value="0.41">41</option>
+                  <option value="0.45">45</option>
                 </select>
               </td>
+              <td class="unit">%</td>
             </tr>
             <tr>
               <td class="row-type">Prélèvements sociaux</td>
-              <td class="row-value" id="prelevements-sociaux"></td>
+              <td class="row-value" id="prelevements-sociaux">17,2</td>
+              <td class="unit">%</td>
             </tr>
             <tr>
               <td class="row-type">Régime d'imposition</td>
-              <td class="row-value" id="regime-imposition">
+              <td class="row-value" id="regime-imposition" colspan="2">
                 <select name="regime-imposition" id="regime-selector">
+                  <option value=""></option>
                   <option value="micro-foncier">Micro-Foncier</option>
                   <option value="reel">Réel</option>
                 </select>
@@ -123,24 +156,27 @@
             <tr>
               <td class="row-type">Impôt annuel</td>
               <td class="row-value" id='"impot-annuel'></td>
+              <td class="unit">€</td>
             </tr>
           </tbody>
           <thead>
-            <th>Rentabilité</th>
-            <th></th>
+            <th class="rentabilite-section" colspan="3">Rentabilité</th>
           </thead>
           <tbody>
             <tr>
               <td class="row-type">Rendement net</td>
               <td class="row-value" id='"rendement-net'></td>
+              <td class="unit">%</td>
             </tr>
             <tr>
               <td class="row-type">Cashflow</td>
               <td class="row-value" id='"cashflow'></td>
+              <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Gain/Perte nette annuelle</td>
               <td class="row-value" id="gain-perte-annuelle"></td>
+              <td class="unit">€</td>
             </tr>
           </tbody>
         </table>
