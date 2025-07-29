@@ -121,6 +121,24 @@ button#reset-tables {
   color: darkred;
 }
 
+button#reset-tables:hover {
+  background-color: darkred;
+  color: white;
+}
+
 #formulaire-reel {
   display: none;
+}
+
+.ligne,
+#ligne-title {
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  background-color: white;
+}
+
+.strong {
+  font-weight: 600;
 }

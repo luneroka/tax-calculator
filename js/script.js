@@ -1,29 +1,6 @@
-import { updateCalculations } from './calculations.js';
-
-const ids = [
-  'adresse',
-  'surface',
-  'pieces',
-  'etage',
-  'ascenseur',
-  'parking-one',
-  'parking-two',
-  'dpe',
-  'chauffage',
-  'construction',
-  'prix',
-  'notaire',
-  'apport',
-  'duree',
-  'taux',
-  'loyer',
-  'charges',
-  'tmi-selector',
-  'charges-copro',
-  'taxe-fonciere',
-  'prelevements-sociaux',
-  'regime-selector',
-];
+import { updateCalculations } from './mainCalculations.js';
+import { updateReelCalculations } from './reelCalculations.js';
+import { ids } from './ids.js';
 
 // Restore values from localStorage on page load
 ids.forEach((id) => {
@@ -51,7 +28,15 @@ ids.forEach((id) => {
   }
 });
 
+ids.forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    el.addEventListener('input', updateReelCalculations);
+  }
+});
+
 updateCalculations();
+updateReelCalculations();
 
 // Reset tables
 const button = document.getElementById('reset-tables');
@@ -64,6 +49,7 @@ button.addEventListener('click', () => {
     }
   });
   updateCalculations();
+  updateReelCalculations();
 });
 
 // Toggle 2044 formulaire
