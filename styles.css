@@ -30,6 +30,7 @@ select {
   height: 100%;
   border: none;
   outline: none;
+  appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
 }
@@ -43,7 +44,9 @@ input::-webkit-inner-spin-button {
 
 /* Disable input arrows on Firefox */
 input[type='number'] {
+  appearance: textfield;
   -moz-appearance: textfield;
+  text-align: right;
 }
 
 th {
@@ -52,10 +55,22 @@ th {
 
 .unit {
   background-color: rgba(217, 217, 217, 0.25);
+  width: 32px;
+  text-align: center;
+  font-size: 0.75rem;
+  font-weight: 200;
 }
 
 .row-type {
   font-size: 0.8rem;
+}
+
+.row-value {
+  text-align: right;
+}
+
+td.row-value select {
+  text-align: right;
 }
 
 .infos-section {
