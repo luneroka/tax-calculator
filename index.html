@@ -25,10 +25,108 @@
             <tr>
               <td class="row-type">Adresse du bien</td>
               <td class="row-value" colspan="2">
-                <textarea cols="20" rows="3" id="adresse" value=""></textarea>
+                <textarea cols="25" rows="3" id="adresse" value=""></textarea>
               </td>
             </tr>
           </tbody>
+
+          <thead>
+            <th class="infos-section" colspan="3">Description</th>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-type">Surface habitable</td>
+              <td class="row-value">
+                <input type="number" id="surface" value="" />
+              </td>
+              <td class="unit">m2</td>
+            </tr>
+            <tr>
+              <td class="row-type">Pièces</td>
+              <td class="row-value">
+                <input type="number" id="pieces" value="" />
+              </td>
+              <td class="unit"></td>
+            </tr>
+            <tr>
+              <td class="row-type">Étage</td>
+              <td class="row-value">
+                <input type="number" id="etage" value="" />
+              </td>
+              <td class="unit"></td>
+            </tr>
+            <tr>
+              <td class="row-type">Ascenseur</td>
+              <td>
+                <select name="ascenseur" id="ascenseur">
+                  <option value="" selected></option>
+                  <option value="oui">Oui</option>
+                  <option value="non">Non</option>
+                </select>
+              </td>
+              <td class="unit"></td>
+            </tr>
+            <tr>
+              <td class="row-type">Parking 1</td>
+              <td>
+                <select name="parking" id="parking-one">
+                  <option value="" selected></option>
+                  <option value="box">Box fermé</option>
+                  <option value="secure">Place sécurisée</option>
+                  <option value="non-secure">Place non sécurisée</option>
+                </select>
+              </td>
+              <td class="unit"></td>
+            </tr>
+            <tr>
+              <td class="row-type">Parking 2</td>
+              <td>
+                <select name="parking" id="parking-two">
+                  <option value="" selected></option>
+                  <option value="box">Box fermé</option>
+                  <option value="secure">Place sécurisée</option>
+                  <option value="non-secure">Place non sécurisée</option>
+                </select>
+              </td>
+              <td class="unit"></td>
+            </tr>
+            <tr>
+              <td class="row-type">DPE</td>
+              <td>
+                <select name="dpe" id="dpe">
+                  <option value="" selected></option>
+                  <option value="A">A</option>
+                  <option value="B">B</option>
+                  <option value="C">C</option>
+                  <option value="D">D</option>
+                  <option value="E">E</option>
+                  <option value="F">F</option>
+                  <option value="G">G</option>
+                </select>
+              </td>
+              <td class="unit"></td>
+            </tr>
+            <tr>
+              <td class="row-type">Chauffage</td>
+              <td>
+                <select name="chauffage" id="chauffage">
+                  <option value="" selected></option>
+                  <option value="collectif">Collectif</option>
+                  <option value="indiv-elec">Individuel Élec</option>
+                  <option value="indiv-gaz">Individuel Gaz</option>
+                </select>
+              </td>
+              <td class="unit"></td>
+            </tr>
+            <tr>
+              <td class="row-type">Construction</td>
+              <td class="row-value">
+                <input type="number" id="construction" value="" />
+              </td>
+              <td class="unit"></td>
+            </tr>
+          </tbody>
+
           <thead>
             <th class="infos-section" colspan="3">Prix d'achat</th>
           </thead>
@@ -53,6 +151,7 @@
               <td class="unit">€</td>
             </tr>
           </tbody>
+
           <thead>
             <th class="infos-section" colspan="3">Emprunt</th>
           </thead>
@@ -148,8 +247,8 @@
               <td class="row-type">TMI</td>
               <td class="row-value user-value">
                 <select name="tmi" id="tmi-selector">
-                  <option value=""></option>
-                  <option value="0" selected>0</option>
+                  <option value="" selected></option>
+                  <option value="0">0</option>
                   <option value="0.11">11</option>
                   <option value="0.3">30</option>
                   <option value="0.41">41</option>
@@ -172,8 +271,8 @@
               <td class="row-type">Régime d'imposition</td>
               <td class="row-value user-value" id="regime-imposition">
                 <select name="regime-imposition" id="regime-selector">
-                  <option value=""></option>
-                  <option value="micro-foncier" selected>Micro-Foncier</option>
+                  <option value="" selected></option>
+                  <option value="micro-foncier">Micro-Foncier</option>
                   <option value="reel">Réel</option>
                 </select>
               </td>

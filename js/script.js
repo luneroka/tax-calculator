@@ -1,6 +1,16 @@
 import { updateCalculations } from './calculations.js';
 
 const ids = [
+  'adresse',
+  'surface',
+  'pieces',
+  'etage',
+  'ascenseur',
+  'parking-one',
+  'parking-two',
+  'dpe',
+  'chauffage',
+  'construction',
   'prix',
   'notaire',
   'apport',
