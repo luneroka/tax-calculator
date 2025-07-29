@@ -31,7 +31,7 @@ function calculateMicroFoncier(revenuHC, tmi, ps) {
   return revenuHC * 0.7 * (tmiPercentage + psPercentage);
 }
 
-function calculateReel(revenuHC, tmi, ps, totalCharges) {
+export function calculateReel(revenuHC, tmi, ps, totalCharges) {
   const tmiPercentage = tmi / 100;
   const psPercentage = ps / 100;
   return (revenuHC - totalCharges) * (tmiPercentage + psPercentage);
@@ -66,6 +66,8 @@ function calculateGainPerte(cashflow) {
   return cashflow * 12;
 }
 
+import { getTotalCharges } from './reelCalculations.js';
+
 export function updateCalculations() {
   // Grab input elements
   const prix = Number(document.querySelector('#prix').value);
@@ -91,7 +93,8 @@ export function updateCalculations() {
   if (regime === 'micro-foncier') {
     impot = calculateMicroFoncier(revenuHC, tmi, ps);
   } else if (regime === 'reel') {
-    impot = calculateReel();
+    const totalCharges = getTotalCharges();
+    impot = calculateReel(revenuHC, tmi, ps, totalCharges);
   }
   const rendement = calculateRendement(
     revenuCC,
