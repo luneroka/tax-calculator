@@ -12,6 +12,39 @@ import {
   calculateGainPerte,
 } from './calculations.js';
 
+const ids = [
+  'prix',
+  'notaire',
+  'apport',
+  'duree',
+  'taux',
+  'loyer',
+  'charges',
+  'tmi-selector',
+  'charges-copro',
+  'taxe-fonciere',
+  'prelevements-sociaux',
+  'regime-selector',
+];
+
+// Restore values from localStorage on page load
+ids.forEach((id) => {
+  const el = document.getElementById(id);
+  if (el) {
+    const saved = localStorage.getItem(id);
+    if (saved !== null) {
+      if (el.tagName === 'SELECT') {
+        el.value = saved;
+      } else {
+        el.value = saved;
+      }
+    }
+    el.addEventListener('input', () => {
+      localStorage.setItem(id, el.value);
+    });
+  }
+});
+
 function updateCalculations() {
   // Grab input elements
   const prix = Number(document.querySelector('#prix').value);
@@ -83,21 +116,7 @@ function updateCalculations() {
     : '';
 }
 
-const ids = [
-  'prix',
-  'notaire',
-  'apport',
-  'duree',
-  'taux',
-  'loyer',
-  'charges',
-  'tmi-selector',
-  'charges-copro',
-  'taxe-fonciere',
-  'prelevements-sociaux',
-  'regime-selector',
-];
-
+// update calculations after each input change
 ids.forEach((id) => {
   const el = document.getElementById(id);
   if (el) {
@@ -114,6 +133,7 @@ button.addEventListener('click', () => {
     const el = document.getElementById(id);
     if (el) {
       el.value = '';
+      localStorage.removeItem(id);
     }
   });
   updateCalculations();
