@@ -31,7 +31,11 @@ export function calculateMicroFoncier(revenuHC, tmi, ps) {
   return revenuHC * 0.7 * (tmiPercentage + psPercentage);
 }
 
-export function calculateReel() {}
+export function calculateReel(revenuHC, tmi, ps, totalCharges) {
+  const tmiPercentage = tmi / 100;
+  const psPercentage = ps / 100;
+  return (revenuHC - totalCharges) * (tmiPercentage + psPercentage);
+}
 
 export function calculateRendement(
   revenuCC,
@@ -73,6 +77,7 @@ export function updateCalculations() {
   const charges = Number(document.querySelector('#charges').value);
   const tmi = Number(document.querySelector('#tmi-selector').value);
   const ps = Number(document.querySelector('#prelevements-sociaux').value);
+  const regime = document.querySelector('#regime-selector').value;
   const chargesCopro = Number(document.querySelector('#charges-copro').value);
   const fonciere = Number(document.querySelector('#taxe-fonciere').value);
 
@@ -82,7 +87,12 @@ export function updateCalculations() {
   const mensualite = calculateMensualite(montantEmprunt, duree, taux);
   const revenuHC = calculateRevenuHC(loyer);
   const revenuCC = calculateRevenuCC(loyer, charges);
-  const impot = calculateMicroFoncier(revenuHC, tmi, ps);
+  let impot;
+  if (regime === 'micro-foncier') {
+    impot = calculateMicroFoncier(revenuHC, tmi, ps);
+  } else if (regime === 'reel') {
+    impot = calculateReel();
+  }
   const rendement = calculateRendement(
     revenuCC,
     chargesCopro,
