@@ -1,5 +1,5 @@
 import { getTotalCharges } from '../reelTable/calculations.js';
-import { formatNumber } from '../core/helper.js';
+import { formatNumber, setOutput } from '../core/helper.js';
 import {
   calculatePrixAchat,
   calculateMontantEmprunt,
@@ -59,36 +59,13 @@ export function updateCalculations() {
   const gainPerte = calculateGainPerte(cashflow);
 
   // Display Elements
-  const inputOfPrixAchat = document.querySelector('#prix-achat');
-  inputOfPrixAchat.textContent = prixAchat ? formatNumber(prixAchat) : '';
-  const inputOfMontantEmprunt = document.querySelector('#montant-emprunt');
-  inputOfMontantEmprunt.textContent = montantEmprunt
-    ? formatNumber(Math.round(montantEmprunt))
-    : '';
-  const inputOfRevenuHC = document.querySelector('#revenus-hc');
-  inputOfRevenuHC.textContent = revenuHC
-    ? formatNumber(Math.round(revenuHC))
-    : '';
-  const inputOfRevenuCC = document.querySelector('#revenus-cc');
-  inputOfRevenuCC.textContent = revenuCC
-    ? formatNumber(Math.round(revenuCC))
-    : '';
-  const inputOfImpot = document.querySelector('#impot-annuel');
-  inputOfImpot.textContent = impot ? formatNumber(Math.round(impot)) : '';
-  const inputOfRendement = document.querySelector('#rendement');
-  inputOfRendement.textContent = isNaN(rendement)
-    ? ''
-    : formatNumber(rendement);
-  const inputOfMensualite = document.querySelector('#mensualite');
-  inputOfMensualite.textContent = mensualite
-    ? formatNumber(Math.round(mensualite))
-    : '';
-  const inputOfCashflow = document.querySelector('#cashflow');
-  inputOfCashflow.textContent = cashflow
-    ? formatNumber(Math.round(cashflow))
-    : '';
-  const inputOfGainPerte = document.querySelector('#gain-perte');
-  inputOfGainPerte.textContent = gainPerte
-    ? formatNumber(Math.round(gainPerte))
-    : '';
+  setOutput('#prix-achat', prixAchat);
+  setOutput('#montant-emprunt', montantEmprunt, true);
+  setOutput('#revenus-hc', revenuHC, true);
+  setOutput('#revenus-cc', revenuCC, true);
+  setOutput('#impot-annuel', impot, true);
+  setOutput('#rendement', rendement);
+  setOutput('#mensualite', mensualite, true);
+  setOutput('#cashflow', cashflow, true);
+  setOutput('#gain-perte', gainPerte, true);
 }

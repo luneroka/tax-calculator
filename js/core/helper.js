@@ -8,7 +8,7 @@ export function setOutput(id, value, round = false) {
     if (isNaN(value) || value === undefined || value === null) {
       el.textContent = '';
     } else {
-      el.textContent = formatNumber(roud ? Math.round(value) : value);
+      el.textContent = formatNumber(round ? Math.round(value) : value);
     }
   }
 }
