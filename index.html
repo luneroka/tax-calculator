@@ -12,7 +12,6 @@
     <link rel="stylesheet" href="styles.css" />
     <title>Calculateur d'impôt foncier</title>
     <script type="module" , src="js/script.js"></script>
-    <script type="module" , src="js/calculations.js"></script>
   </head>
 
   <body>
@@ -25,15 +24,15 @@
           <tbody>
             <tr>
               <td class="row-type">Prix du bien</td>
-              <td class="row-value">
-                <input type="number" id="prix" value="207000" />
+              <td class="row-value user-value">
+                <input type="number" id="prix" value="" />
               </td>
               <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Frais de notaire</td>
-              <td class="row-value">
-                <input type="number" id="notaire" value="8500" />
+              <td class="row-value user-value">
+                <input type="number" id="notaire" value="" />
               </td>
               <td class="unit">€</td>
             </tr>
@@ -49,8 +48,8 @@
           <tbody>
             <tr>
               <td class="row-type">Apport</td>
-              <td class="row-value">
-                <input type="number" id="apport" value="8500" />
+              <td class="row-value user-value">
+                <input type="number" id="apport" value="" />
               </td>
               <td class="unit">€</td>
             </tr>
@@ -61,15 +60,15 @@
             </tr>
             <tr>
               <td class="row-type">Durée</td>
-              <td class="row-value">
-                <input type="number" id="duree" value="25" />
+              <td class="row-value user-value">
+                <input type="number" id="duree" value="" />
               </td>
               <td class="unit">ans</td>
             </tr>
             <tr>
               <td class="row-type">Taux</td>
-              <td class="row-value">
-                <input type="number" id="taux" value="1.15" />
+              <td class="row-value user-value">
+                <input type="number" id="taux" value="" />
               </td>
               <td class="unit">%</td>
             </tr>
@@ -93,15 +92,15 @@
           <tbody>
             <tr>
               <td class="row-type">Loyer mensuel HC</td>
-              <td class="row-value">
-                <input type="number" id="loyer" value="835" />
+              <td class="row-value user-value">
+                <input type="number" id="loyer" value="" />
               </td>
               <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Charges locatives mensuelles</td>
-              <td class="row-value">
-                <input type="number" id="charges" value="70" />
+              <td class="row-value user-value">
+                <input type="number" id="charges" value="" />
               </td>
               <td class="unit">€</td>
             </tr>
@@ -117,15 +116,15 @@
             </tr>
             <tr>
               <td class="row-type">Charges de copro. annuelles</td>
-              <td class="row-value">
-                <input id="charges-copro" type="number" value="814" />
+              <td class="row-value user-value">
+                <input id="charges-copro" type="number" value="" />
               </td>
               <td class="unit">€</td>
             </tr>
             <tr>
               <td class="row-type">Taxe foncière</td>
-              <td class="row-value">
-                <input id="taxe-fonciere" type="number" value="301" />
+              <td class="row-value user-value">
+                <input id="taxe-fonciere" type="number" value="" />
               </td>
               <td class="unit">€</td>
             </tr>
@@ -136,7 +135,7 @@
           <tbody>
             <tr>
               <td class="row-type">TMI</td>
-              <td class="row-value">
+              <td class="row-value user-value">
                 <select name="tmi" id="tmi-selector">
                   <option value=""></option>
                   <option value="0" selected>0</option>
@@ -150,7 +149,7 @@
             </tr>
             <tr>
               <td class="row-type">Prélèvements sociaux</td>
-              <td class="row-value">
+              <td class="row-value user-value">
                 <select name="prelevements-sociaux" id="prelevements-sociaux">
                   <option value=""></option>
                   <option value="17.2" selected>17,2</option>
@@ -160,7 +159,7 @@
             </tr>
             <tr>
               <td class="row-type">Régime d'imposition</td>
-              <td class="row-value" id="regime-imposition">
+              <td class="row-value user-value" id="regime-imposition">
                 <select name="regime-imposition" id="regime-selector">
                   <option value=""></option>
                   <option value="micro-foncier" selected>Micro-Foncier</option>

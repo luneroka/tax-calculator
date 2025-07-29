@@ -20,6 +20,7 @@ td {
 #tables-container {
   margin: 32px;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
   gap: 32px;
 }
@@ -71,8 +72,17 @@ th {
   font-size: 12px;
 }
 
+.user-value {
+  background-color: lightcyan;
+}
+
+td.user-value input {
+  background-color: lightcyan;
+}
+
 td.row-value select {
   text-align: right;
+  background-color: lightcyan;
 }
 
 .infos-section {

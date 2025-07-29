@@ -1,3 +1,4 @@
+import { formatNumber } from './helpers.js';
 import {
   calculatePrixAchat,
   calculateMontantEmprunt,
@@ -51,23 +52,35 @@ function updateCalculations() {
 
   // Display Elements
   const inputOfPrixAchat = document.querySelector('#prix-achat');
-  inputOfPrixAchat.textContent = prixAchat || '';
+  inputOfPrixAchat.textContent = prixAchat ? formatNumber(prixAchat) : '';
   const inputOfMontantEmprunt = document.querySelector('#montant-emprunt');
-  inputOfMontantEmprunt.textContent = Math.round(montantEmprunt) || '';
+  inputOfMontantEmprunt.textContent = montantEmprunt
+    ? formatNumber(Math.round(montantEmprunt))
+    : '';
   const inputOfRevenuHC = document.querySelector('#revenus-hc');
-  inputOfRevenuHC.textContent = Math.round(revenuHC) || '';
+  inputOfRevenuHC.textContent = revenuHC
+    ? formatNumber(Math.round(revenuHC))
+    : '';
   const inputOfRevenuCC = document.querySelector('#revenus-cc');
-  inputOfRevenuCC.textContent = Math.round(revenuCC) || '';
+  inputOfRevenuCC.textContent = revenuCC
+    ? formatNumber(Math.round(revenuCC))
+    : '';
   const inputOfImpot = document.querySelector('#impot-annuel');
-  inputOfImpot.textContent = Math.round(impot) || '';
+  inputOfImpot.textContent = impot ? formatNumber(Math.round(impot)) : '';
   const inputOfRendement = document.querySelector('#rendement');
   inputOfRendement.textContent = isNaN(rendement) ? '' : rendement;
   const inputOfMensualite = document.querySelector('#mensualite');
-  inputOfMensualite.textContent = Math.round(mensualite) || '';
+  inputOfMensualite.textContent = mensualite
+    ? formatNumber(Math.round(mensualite))
+    : '';
   const inputOfCashflow = document.querySelector('#cashflow');
-  inputOfCashflow.textContent = Math.round(cashflow) || '';
+  inputOfCashflow.textContent = cashflow
+    ? formatNumber(Math.round(cashflow))
+    : '';
   const inputOfGainPerte = document.querySelector('#gain-perte');
-  inputOfGainPerte.textContent = Math.round(gainPerte) || '';
+  inputOfGainPerte.textContent = gainPerte
+    ? formatNumber(Math.round(gainPerte))
+    : '';
 }
 
 const ids = [
