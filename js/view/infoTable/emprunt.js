@@ -1,27 +1,40 @@
-export const prixAchatRows = [
+export const empruntRows = [
   {
-    label: 'Prix du bien',
-    id: 'prix',
+    label: 'Apport',
+    id: 'apport',
     type: 'input',
     inputType: 'number',
     unit: '€',
   },
   {
-    label: 'Frais de notaire',
-    id: 'notaire',
-    type: 'input',
-    inputType: 'number',
+    label: 'Montant emprunté',
+    id: 'montant-emprunt',
+    type: 'td',
     unit: '€',
   },
   {
-    label: "Prix d'achat",
-    id: 'prix-achat',
+    label: 'Durée',
+    id: 'duree',
+    type: 'input',
+    inputType: 'number',
+    unit: 'ans',
+  },
+  {
+    label: 'Taux',
+    id: 'taux',
+    type: 'input',
+    inputType: 'number',
+    unit: '%',
+  },
+  {
+    label: 'Mensualités',
+    id: 'mensualite',
     type: 'td',
     unit: '€',
   },
 ];
 
-export function renderPrixAchatRows(rows) {
+export function renderEmpruntRows(rows) {
   return rows
     .map((row) => {
       let inputHtml = '';

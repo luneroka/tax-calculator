@@ -13,7 +13,8 @@
     <title>Calculateur d'impôt foncier</title>
     <script type="module" , src="js/script.js"></script>
     <script type="module" src="js/view/infoTable/description.js"></script>
-    <script type="module" src="js/view/infoTable/prixAchat.js"></script>
+    <script type="module" src="js/view/infoTable/prix.js"></script>
+    <script type="module" src="js/view/infoTable/emprunt.js"></script>
   </head>
 
   <body>
@@ -49,39 +50,7 @@
           <thead>
             <th class="infos-section" colspan="3">Emprunt</th>
           </thead>
-          <tbody>
-            <tr>
-              <td class="row-type">Apport</td>
-              <td class="row-value user-value">
-                <input type="number" id="apport" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Montant emprunté</td>
-              <td class="row-value" id="montant-emprunt"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Durée</td>
-              <td class="row-value user-value">
-                <input type="number" id="duree" value="" />
-              </td>
-              <td class="unit">ans</td>
-            </tr>
-            <tr>
-              <td class="row-type">Taux</td>
-              <td class="row-value user-value">
-                <input type="number" id="taux" value="" />
-              </td>
-              <td class="unit">%</td>
-            </tr>
-            <tr>
-              <td class="row-type">Mensualités</td>
-              <td class="row-value" id="mensualite"></td>
-              <td class="unit">€</td>
-            </tr>
-          </tbody>
+          <tbody id="emprunt-tbody"></tbody>
         </table>
 
         <div id="buttons">

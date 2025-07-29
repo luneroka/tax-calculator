@@ -4,21 +4,19 @@ window.updateCalculations = updateCalculations;
 window.updateReelCalculations = updateReelCalculations;
 import { restoreInputs } from './core/storage.js';
 import { ids } from './core/ids.js';
-import {
-  prixAchatRows,
-  renderPrixAchatRows,
-} from './view/infoTable/prixAchat.js';
+import { prixRows, renderPrixRows } from './view/infoTable/prix.js';
 import {
   descriptionRows,
   renderDescriptionRows,
 } from './view/infoTable/description.js';
+import { empruntRows, renderEmpruntRows } from './view/infoTable/emprunt.js';
 
 // --- Render dynamic sections --- //
 
 // Render Prix d'Achat
-const prixAchatTBody = document.querySelector('.prix-achat-tbody');
-if (prixAchatTBody) {
-  prixAchatTBody.innerHTML = renderPrixAchatRows(prixAchatRows);
+const prixTBody = document.querySelector('.prix-achat-tbody');
+if (prixTBody) {
+  prixTBody.innerHTML = renderPrixRows(prixRows);
 }
 
 // Render Description
@@ -27,6 +25,11 @@ if (descriptionTbody) {
   descriptionTbody.innerHTML = renderDescriptionRows(descriptionRows);
 }
 
+// Render Emprunt
+const empruntTbody = document.getElementById('emprunt-tbody');
+if (empruntTbody) {
+  empruntTbody.innerHTML = renderEmpruntRows(empruntRows);
+}
 // --- Restore values and set up listeners for all ids --- //
 restoreInputs(ids);
 

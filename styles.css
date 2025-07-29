@@ -80,14 +80,6 @@ th {
   font-size: 12px;
 }
 
-.user-value {
-  background-color: lightcyan;
-}
-
-td.user-value input {
-  background-color: lightcyan;
-}
-
 .infos-section {
   text-decoration: underline;
 }
