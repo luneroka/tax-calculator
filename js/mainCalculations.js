@@ -131,7 +131,9 @@ export function updateCalculations() {
   const inputOfImpot = document.querySelector('#impot-annuel');
   inputOfImpot.textContent = impot ? formatNumber(Math.round(impot)) : '';
   const inputOfRendement = document.querySelector('#rendement');
-  inputOfRendement.textContent = isNaN(rendement) ? '' : rendement;
+  inputOfRendement.textContent = isNaN(rendement)
+    ? ''
+    : formatNumber(rendement);
   const inputOfMensualite = document.querySelector('#mensualite');
   inputOfMensualite.textContent = mensualite
     ? formatNumber(Math.round(mensualite))
