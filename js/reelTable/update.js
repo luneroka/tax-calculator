@@ -1,4 +1,4 @@
-import { formatNumber } from '../core/helper.js';
+import { formatNumber, setOutput } from '../core/helper.js';
 import {
   calculateFrais,
   calculateChargesTaxables,
@@ -44,22 +44,10 @@ export function updateReelCalculations() {
   const totalCharges = calculateTotalCharges(chargesTaxables, csg);
 
   // Display elements
-  const inputOfRecettes = document.querySelector('#recettes');
-  inputOfRecettes.textContent = recettes ? formatNumber(recettes) : '';
-  const inputOfTotalFrais = document.querySelector('#total-frais');
-  inputOfTotalFrais.textContent = totalFrais ? formatNumber(totalFrais) : '';
-  const inputOfChargesTaxables = document.querySelector('#charges-taxables');
-  inputOfChargesTaxables.textContent = chargesTaxables
-    ? formatNumber(chargesTaxables)
-    : '';
-  const inputOfFoncierTaxable = document.querySelector('#revenus-taxables');
-  inputOfFoncierTaxable.textContent = revenuFoncier
-    ? formatNumber(revenuFoncier)
-    : '';
-  const inputOfCsg = document.querySelector('#csg');
-  inputOfCsg.textContent = csg ? formatNumber(Math.floor(csg)) : 0;
-  const inputOfTotalCharges = document.querySelector('#total-charges');
-  inputOfTotalCharges.textContent = totalCharges
-    ? formatNumber(totalCharges)
-    : '';
+  setOutput('#recettes', recettes);
+  setOutput('#total-frais', totalFrais, true);
+  setOutput('#charges-taxables', chargesTaxables, true);
+  setOutput('#revenus-taxables', revenuFoncier, true);
+  setOutput('#csg', csg, true);
+  setOutput('#total-charges', totalCharges, true);
 }
