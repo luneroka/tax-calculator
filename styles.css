@@ -33,6 +33,7 @@ select {
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  font-size: 12px;
 }
 
 /* Disable input arrows on Chrome, Safari, Edge, Opera */
@@ -67,6 +68,7 @@ th {
 
 .row-value {
   text-align: right;
+  font-size: 12px;
 }
 
 td.row-value select {
@@ -80,4 +82,10 @@ td.row-value select {
 .rentabilite-section {
   text-decoration: underline;
   text-align: left;
+}
+
+button#reset-tables {
+  margin-top: 32px;
+  padding: 8px 16px;
+  cursor: pointer;
 }

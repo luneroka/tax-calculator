@@ -2,8 +2,12 @@ export function calculatePrixAchat(prix, notaire) {
   return prix + notaire;
 }
 
+export function calculateMontantEmprunt(prixAchat, apport) {
+  return prixAchat - apport;
+}
+
 export function calculateMensualite(capital, duree, taux) {
-  const monthlyRate = taux / 12;
+  const monthlyRate = taux / 100 / 12;
   return (
     (capital * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -(duree * 12)))
   );
@@ -18,7 +22,9 @@ export function calculateRevenuCC(loyer, charges) {
 }
 
 export function calculateMicroFoncier(revenuHC, tmi, ps) {
-  return revenuHC * 0.7 * (tmi + ps);
+  const tmiPercentage = tmi / 100;
+  const psPercentage = ps / 100;
+  return revenuHC * 0.7 * (tmiPercentage + psPercentage);
 }
 
 export function calculateReel() {}
@@ -30,7 +36,9 @@ export function calculateRendement(
   impot,
   prixAchat
 ) {
-  return (revenuCC - (chargesCopro + fonciere + impot)) / prixAchat;
+  return Number(
+    ((revenuCC - (chargesCopro + fonciere + impot)) / prixAchat) * 100
+  ).toFixed(2);
 }
 
 export function calculateCashflow(
