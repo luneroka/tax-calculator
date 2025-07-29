@@ -1,24 +1,10 @@
-import { updateCalculations } from './mainCalculations.js';
-import { updateReelCalculations } from './reelCalculations.js';
-import { ids } from './ids.js';
+import { updateCalculations } from './mainTable/update.js';
+import { updateReelCalculations } from './reelTable/update.js';
+import { restoreInputs } from './core/storage.js';
+import { ids } from './core/ids.js';
 
-// Restore values from localStorage on page load
-ids.forEach((id) => {
-  const el = document.getElementById(id);
-  if (el) {
-    const saved = localStorage.getItem(id);
-    if (saved !== null) {
-      if (el.tagName === 'SELECT') {
-        el.value = saved;
-      } else {
-        el.value = saved;
-      }
-    }
-    el.addEventListener('input', () => {
-      localStorage.setItem(id, el.value);
-    });
-  }
-});
+// Sync with localStorage
+restoreInputs(ids);
 
 // update calculations after each input change
 ids.forEach((id) => {

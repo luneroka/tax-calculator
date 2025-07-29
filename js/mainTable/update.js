@@ -1,72 +1,17 @@
-function formatNumber(num) {
-  return new Intl.NumberFormat('fr-FR').format(num);
-}
-
-function calculatePrixAchat(prix, notaire) {
-  return prix + notaire;
-}
-
-function calculateMontantEmprunt(prixAchat, apport) {
-  return prixAchat - apport;
-}
-
-function calculateMensualite(capital, duree, taux) {
-  const monthlyRate = taux / 100 / 12;
-  return (
-    (capital * monthlyRate) / (1 - Math.pow(1 + monthlyRate, -(duree * 12)))
-  );
-}
-
-function calculateRevenuHC(loyer) {
-  return loyer * 12;
-}
-
-function calculateRevenuCC(loyer, charges) {
-  return (loyer + charges) * 12;
-}
-
-function calculateMicroFoncier(revenuHC, tmi, ps) {
-  const tmiPercentage = tmi / 100;
-  const psPercentage = ps / 100;
-  return revenuHC * 0.7 * (tmiPercentage + psPercentage);
-}
-
-export function calculateReel(revenuHC, tmi, ps, totalCharges) {
-  const tmiPercentage = tmi / 100;
-  const psPercentage = ps / 100;
-  return (revenuHC - totalCharges) * (tmiPercentage + psPercentage);
-}
-
-function calculateRendement(
-  revenuCC,
-  chargesCopro,
-  fonciere,
-  impot,
-  prixAchat
-) {
-  return Number(
-    ((revenuCC - (chargesCopro + fonciere + impot)) / prixAchat) * 100
-  ).toFixed(2);
-}
-
-function calculateCashflow(
-  loyer,
-  charges,
-  chargesCopro,
-  fonciere,
-  impot,
-  mensualite
-) {
-  return (
-    loyer + charges - (mensualite + (chargesCopro + fonciere + impot) / 12)
-  );
-}
-
-function calculateGainPerte(cashflow) {
-  return cashflow * 12;
-}
-
-import { getTotalCharges } from './reelCalculations.js';
+import { getTotalCharges } from '../reelTable/calculations.js';
+import { formatNumber } from '../core/helper.js';
+import {
+  calculatePrixAchat,
+  calculateMontantEmprunt,
+  calculateMensualite,
+  calculateRevenuHC,
+  calculateRevenuCC,
+  calculateRendement,
+  calculateCashflow,
+  calculateGainPerte,
+  calculateMicroFoncier,
+  calculateReel,
+} from './calculations.js';
 
 export function updateCalculations() {
   // Grab input elements
