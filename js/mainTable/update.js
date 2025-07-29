@@ -1,5 +1,5 @@
 import { getTotalCharges } from '../reelTable/calculations.js';
-import { formatNumber, setOutput } from '../core/helper.js';
+import { getInputs, setOutput } from '../core/helper.js';
 import {
   calculatePrixAchat,
   calculateMontantEmprunt,
@@ -15,44 +15,37 @@ import {
 
 export function updateCalculations() {
   // Grab input elements
-  const prix = Number(document.querySelector('#prix').value);
-  const notaire = Number(document.querySelector('#notaire').value);
-  const apport = Number(document.querySelector('#apport').value);
-  const duree = Number(document.querySelector('#duree').value);
-  const taux = Number(document.querySelector('#taux').value);
-  const loyer = Number(document.querySelector('#loyer').value);
-  const charges = Number(document.querySelector('#charges').value);
-  const tmi = Number(document.querySelector('#tmi-selector').value);
-  const ps = Number(document.querySelector('#prelevements-sociaux').value);
-  const regime = document.querySelector('#regime-selector').value;
-  const chargesCopro = Number(document.querySelector('#charges-copro').value);
-  const fonciere = Number(document.querySelector('#taxe-fonciere').value);
+  const inputs = getInputs();
 
   // Calculate elements
-  const prixAchat = calculatePrixAchat(prix, notaire);
-  const montantEmprunt = calculateMontantEmprunt(prixAchat, apport);
-  const mensualite = calculateMensualite(montantEmprunt, duree, taux);
-  const revenuHC = calculateRevenuHC(loyer);
-  const revenuCC = calculateRevenuCC(loyer, charges);
+  const prixAchat = calculatePrixAchat(inputs.prix, inputs.notaire);
+  const montantEmprunt = calculateMontantEmprunt(prixAchat, inputs.apport);
+  const mensualite = calculateMensualite(
+    montantEmprunt,
+    inputs.duree,
+    inputs.taux
+  );
+  const revenuHC = calculateRevenuHC(inputs.loyer);
+  const revenuCC = calculateRevenuCC(inputs.loyer, inputs.charges);
   let impot;
-  if (regime === 'micro-foncier') {
-    impot = calculateMicroFoncier(revenuHC, tmi, ps);
-  } else if (regime === 'reel') {
+  if (inputs.regime === 'micro-foncier') {
+    impot = calculateMicroFoncier(revenuHC, inputs.tmi, inputs.ps);
+  } else if (inputs.regime === 'reel') {
     const totalCharges = getTotalCharges();
-    impot = calculateReel(revenuHC, tmi, ps, totalCharges);
+    impot = calculateReel(revenuHC, inputs.tmi, inputs.ps, totalCharges);
   }
   const rendement = calculateRendement(
     revenuCC,
-    chargesCopro,
-    fonciere,
+    inputs.chargesCopro,
+    inputs.fonciere,
     impot,
     prixAchat
   );
   const cashflow = calculateCashflow(
-    loyer,
-    charges,
-    chargesCopro,
-    fonciere,
+    inputs.loyer,
+    inputs.charges,
+    inputs.chargesCopro,
+    inputs.fonciere,
     impot,
     mensualite
   );
