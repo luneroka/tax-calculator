@@ -65,3 +65,18 @@ button.addEventListener('click', () => {
   });
   updateCalculations();
 });
+
+// Toggle 2044 formulaire
+const toggleBtn = document.getElementById('toggle-reel');
+const formulaireReel = document.getElementById('formulaire-reel');
+
+toggleBtn.addEventListener('click', () => {
+  if (
+    formulaireReel.style.display === 'none' ||
+    formulaireReel.style.display === ''
+  ) {
+    formulaireReel.style.display = 'block';
+  } else {
+    formulaireReel.style.display = 'none';
+  }
+});

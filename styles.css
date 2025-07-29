@@ -102,8 +102,25 @@ td.row-value select {
   text-align: left;
 }
 
-button#reset-tables {
+#buttons {
   margin-top: 32px;
+  width: 100%;
+  display: flex;
+  gap: 16px;
+}
+
+button {
   padding: 8px 16px;
   cursor: pointer;
+  width: 100%;
+}
+
+button#reset-tables {
+  background-color: lightpink;
+  border: 0.5px solid;
+  color: darkred;
+}
+
+#formulaire-reel {
+  display: none;
 }
