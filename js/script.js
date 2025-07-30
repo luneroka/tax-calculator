@@ -10,6 +10,7 @@ import {
   renderDescriptionRows,
 } from './view/infoTable/description.js';
 import { empruntRows, renderEmpruntRows } from './view/infoTable/emprunt.js';
+import { loyerRows, renderLoyerRows } from './view/rentabiliteTable/loyer.js';
 
 // --- Render dynamic sections --- //
 
@@ -30,6 +31,13 @@ const empruntTbody = document.getElementById('emprunt-tbody');
 if (empruntTbody) {
   empruntTbody.innerHTML = renderEmpruntRows(empruntRows);
 }
+
+// Render Loyer
+const loyerTbody = document.getElementById('loyer-tbody');
+if (loyerTbody) {
+  loyerTbody.innerHTML = renderLoyerRows(loyerRows);
+}
+
 // --- Restore values and set up listeners for all ids --- //
 restoreInputs(ids);
 

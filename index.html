@@ -61,50 +61,14 @@
 
       <div id="rentabilite">
         <table>
+          <!-- SECTION LOYER -->
           <thead>
             <th class="rentabilite-section">Loyer</th>
             <th colspan="2">2025</th>
           </thead>
-          <tbody>
-            <tr>
-              <td class="row-type">Loyer mensuel HC</td>
-              <td class="row-value user-value">
-                <input type="number" id="loyer" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Charges locatives mensuelles</td>
-              <td class="row-value user-value">
-                <input type="number" id="charges" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Revenus locatifs annuels HC</td>
-              <td class="row-value" id="revenus-hc"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Revenus locatifs annuels CC</td>
-              <td class="row-value" id="revenus-cc"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Charges de copro. annuelles</td>
-              <td class="row-value user-value">
-                <input id="charges-copro" type="number" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Taxe foncière</td>
-              <td class="row-value user-value">
-                <input id="taxe-fonciere" type="number" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-          </tbody>
+          <tbody id="loyer-tbody"></tbody>
+
+          <!-- SECTION IMPOT -->
           <thead>
             <th class="rentabilite-section" colspan="3">Impôts</th>
           </thead>
@@ -150,6 +114,8 @@
               <td class="unit">€</td>
             </tr>
           </tbody>
+
+          <!-- SECTION RENTABILITÉ -->
           <thead>
             <th class="rentabilite-section" colspan="3">Rentabilité</th>
           </thead>
