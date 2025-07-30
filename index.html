@@ -28,7 +28,7 @@
             <tr>
               <td class="row-type">Adresse du bien</td>
               <td class="row-value" colspan="2">
-                <textarea cols="25" rows="3" id="adresse" value=""></textarea>
+                <textarea rows="3" id="adresse" value=""></textarea>
               </td>
             </tr>
           </tbody>
@@ -78,61 +78,63 @@
 
         <div id="buttons">
           <button id="reset-tables">Tout effacer</button>
-          <button id="show-compare">Comparer</button>
+          <button id="toggle-compare">Comparer</button>
           <button id="toggle-reel">Formulaire 2044</button>
         </div>
       </div>
     </div>
 
-    <div id="comparison-container">
-      <table class="comparison-table">
-        <thead>
-          <tr>
-            <th style="width: 33%"></th>
-            <th>Micro-foncier</th>
-            <th>Réel</th>
-            <th style="width: 10%"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="row-type">Impôt annuel</td>
-            <td class="row-value" id="impot-micro"></td>
-            <td class="row-value" id="impot-reel"></td>
-            <td class="unit">€</td>
-          </tr>
-          <tr>
-            <td class="row-type">Rendement net</td>
-            <td class="row-value" id="rendement-micro"></td>
-            <td class="row-value" id="rendement-reel"></td>
-            <td class="unit">%</td>
-          </tr>
-          <tr>
-            <td class="row-type">Cashflow</td>
-            <td class="row-value" id="cashflow-micro"></td>
-            <td class="row-value" id="cashflow-reel"></td>
-            <td class="unit">€</td>
-          </tr>
-          <tr>
-            <td class="row-type">Gain/Perte nette annuelle</td>
-            <td class="row-value" id="gain-perte-micro"></td>
-            <td class="row-value" id="gain-perte-reel"></td>
-            <td class="unit">€</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <div id="toggle-containers">
+      <!-- TABLE : FORMULAIRE REEL -->
+      <div id="formulaire-container">
+        <table id="formulaire-table">
+          <thead>
+            <th id="ligne-title">Ligne</th>
+            <th class="rentabilite-section">Formulaire 2044</th>
+            <th colspan="2">2025</th>
+          </thead>
+          <tbody id="reel-tbody"></tbody>
+        </table>
+      </div>
 
-    <!-- TABLE : FORMULAIRE REEL -->
-    <div id="formulaire-reel">
-      <table>
-        <thead>
-          <th id="ligne-title">Ligne</th>
-          <th class="rentabilite-section">Formulaire 2044</th>
-          <th colspan="2">2025</th>
-        </thead>
-        <tbody id="reel-tbody"></tbody>
-      </table>
+      <div id="comparison-container">
+        <table id="comparison-table">
+          <thead>
+            <tr>
+              <th style="width: 33%"></th>
+              <th>Micro-foncier</th>
+              <th>Réel</th>
+              <th style="width: 10%"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="row-type">Impôt annuel</td>
+              <td class="row-value" id="impot-micro"></td>
+              <td class="row-value" id="impot-reel"></td>
+              <td class="unit">€</td>
+            </tr>
+            <tr>
+              <td class="row-type">Rendement net</td>
+              <td class="row-value" id="rendement-micro"></td>
+              <td class="row-value" id="rendement-reel"></td>
+              <td class="unit">%</td>
+            </tr>
+            <tr>
+              <td class="row-type">Cashflow</td>
+              <td class="row-value" id="cashflow-micro"></td>
+              <td class="row-value" id="cashflow-reel"></td>
+              <td class="unit">€</td>
+            </tr>
+            <tr>
+              <td class="row-type">Gain/Perte nette annuelle</td>
+              <td class="row-value" id="gain-perte-micro"></td>
+              <td class="row-value" id="gain-perte-reel"></td>
+              <td class="unit">€</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
     </div>
   </body>
 </html>

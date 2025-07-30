@@ -86,10 +86,24 @@ button.addEventListener('click', () => {
   updateReelCalculations();
 });
 
+// Toggle comparison table
+const toggleCompare = document.getElementById('toggle-compare');
+const conparisonContainer = document.getElementById('comparison-container');
+toggleCompare.addEventListener('click', () => {
+  if (
+    conparisonContainer.style.display === 'none' ||
+    conparisonContainer.style.display === ''
+  ) {
+    conparisonContainer.style.display = 'block';
+  } else {
+    conparisonContainer.style.display = 'none';
+  }
+});
+
 // Toggle 2044 formulaire
-const toggleBtn = document.getElementById('toggle-reel');
-const formulaireReel = document.getElementById('formulaire-reel');
-toggleBtn.addEventListener('click', () => {
+const toggleReel = document.getElementById('toggle-reel');
+const formulaireReel = document.getElementById('formulaire-container');
+toggleReel.addEventListener('click', () => {
   if (
     formulaireReel.style.display === 'none' ||
     formulaireReel.style.display === ''

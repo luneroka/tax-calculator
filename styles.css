@@ -17,7 +17,8 @@ td {
   padding: 4px;
 }
 
-#tables-container {
+#tables-container,
+#toggle-containers {
   margin: 32px;
   display: flex;
   flex-direction: row;
@@ -90,6 +91,11 @@ th {
   font-size: 12px;
 }
 
+.row-value textarea {
+  width: 100%;
+  height: 100%;
+}
+
 .infos-section {
   text-decoration: underline;
 }
@@ -123,10 +129,6 @@ button#reset-tables:hover {
   color: white;
 }
 
-#formulaire-reel {
-  display: none;
-}
-
 .ligne,
 #ligne-title {
   font-size: 0.7rem;
@@ -136,11 +138,32 @@ button#reset-tables:hover {
   background-color: white;
 }
 
-#comparison-container {
+#comparison-container,
+#formulaire-container {
   display: none;
+  width: 100%;
+  max-width: 600px;
 }
 
-.comparison-table {
+#formulaire-table {
+  width: 100%;
+}
+
+#comparison-table {
   table-layout: fixed;
-  width: 50%;
+  width: 100%;
+}
+
+#comparison-table td {
+  text-align: center;
+}
+
+@media (max-width: 912px) {
+  #tables-container,
+  #toggle-containers {
+    margin: 16px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
 }
