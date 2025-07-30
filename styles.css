@@ -20,9 +20,19 @@ td {
 #tables-container {
   margin: 32px;
   display: flex;
-  flex-wrap: wrap;
   flex-direction: row;
   gap: 32px;
+}
+
+#infos,
+#rentabilite {
+  width: 100%;
+  max-width: 600px;
+}
+
+#infos table,
+#rentabilite table {
+  width: 100%;
 }
 
 input,
@@ -124,4 +134,13 @@ button#reset-tables:hover {
   font-style: italic;
   text-align: center;
   background-color: white;
+}
+
+#comparison-container {
+  display: none;
+}
+
+.comparison-table {
+  table-layout: fixed;
+  width: 50%;
 }

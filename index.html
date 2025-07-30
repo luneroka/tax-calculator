@@ -13,8 +13,6 @@
     <title>Calculateur d'impôt foncier</title>
     <script type="module" , src="js/script.js"></script>
     <script type="module" src="js/view/infoTable/description.js"></script>
-    <script type="module" src="js/view/infoTable/prix.js"></script>
-    <script type="module" src="js/view/infoTable/emprunt.js"></script>
   </head>
 
   <body>
@@ -80,21 +78,61 @@
 
         <div id="buttons">
           <button id="reset-tables">Tout effacer</button>
+          <button id="show-compare">Comparer</button>
           <button id="toggle-reel">Formulaire 2044</button>
         </div>
       </div>
+    </div>
 
-      <!-- TABLE : FORMULAIRE REEL -->
-      <div id="formulaire-reel">
-        <table>
-          <thead>
-            <th id="ligne-title">Ligne</th>
-            <th class="rentabilite-section">Formulaire 2044</th>
-            <th colspan="2">2025</th>
-          </thead>
-          <tbody id="reel-tbody"></tbody>
-        </table>
-      </div>
+    <div id="comparison-container">
+      <table class="comparison-table">
+        <thead>
+          <tr>
+            <th style="width: 33%"></th>
+            <th>Micro-foncier</th>
+            <th>Réel</th>
+            <th style="width: 10%"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="row-type">Impôt annuel</td>
+            <td class="row-value" id="impot-micro"></td>
+            <td class="row-value" id="impot-reel"></td>
+            <td class="unit">€</td>
+          </tr>
+          <tr>
+            <td class="row-type">Rendement net</td>
+            <td class="row-value" id="rendement-micro"></td>
+            <td class="row-value" id="rendement-reel"></td>
+            <td class="unit">%</td>
+          </tr>
+          <tr>
+            <td class="row-type">Cashflow</td>
+            <td class="row-value" id="cashflow-micro"></td>
+            <td class="row-value" id="cashflow-reel"></td>
+            <td class="unit">€</td>
+          </tr>
+          <tr>
+            <td class="row-type">Gain/Perte nette annuelle</td>
+            <td class="row-value" id="gain-perte-micro"></td>
+            <td class="row-value" id="gain-perte-reel"></td>
+            <td class="unit">€</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- TABLE : FORMULAIRE REEL -->
+    <div id="formulaire-reel">
+      <table>
+        <thead>
+          <th id="ligne-title">Ligne</th>
+          <th class="rentabilite-section">Formulaire 2044</th>
+          <th colspan="2">2025</th>
+        </thead>
+        <tbody id="reel-tbody"></tbody>
+      </table>
     </div>
   </body>
 </html>
