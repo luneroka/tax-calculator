@@ -19,6 +19,7 @@
 
   <body>
     <div id="tables-container">
+      <!-- TABLE : INFOS -->
       <div id="infos">
         <table>
           <!-- SECTION LOCALISATION -->
@@ -59,6 +60,7 @@
         </div>
       </div>
 
+      <!-- TABLE : RENTABILITE -->
       <div id="rentabilite">
         <table>
           <!-- SECTION LOYER -->
@@ -82,6 +84,7 @@
         </table>
       </div>
 
+      <!-- TABLE : FORMULAIRE REEL -->
       <div id="formulaire-reel">
         <table>
           <thead>
@@ -89,124 +92,7 @@
             <th class="rentabilite-section">Formulaire 2044</th>
             <th colspan="2">2025</th>
           </thead>
-          <tbody>
-            <tr>
-              <td class="ligne">215</td>
-              <td class="row-type strong">Total recettes</td>
-              <td class="row-value strong" id="recettes"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">221</td>
-              <td class="row-type">Frais de gestion</td>
-              <td class="row-value">
-                <input type="number" id="frais-gestion" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">222</td>
-              <td class="row-type">Autres frais</td>
-              <td class="row-value">
-                <input type="number" id="autres-frais" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">223</td>
-              <td class="row-type">Assurance de prêt</td>
-              <td class="row-value">
-                <input type="number" id="assurance-pret" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">223</td>
-              <td class="row-type">Assurance PNO</td>
-              <td class="row-value">
-                <input type="number" id="assurance-pno" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">224</td>
-              <td class="row-type">Travaux</td>
-              <td class="row-value">
-                <input type="number" id="travaux" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">227</td>
-              <td class="row-type">Taxe foncière (hors TEOM)</td>
-              <td class="row-value">
-                <input type="number" id="reel-taxe-fonciere" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">229</td>
-              <td class="row-type">Charges de copro</td>
-              <td class="row-value">
-                <input type="number" id="reel-charges-copro" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">230</td>
-              <td class="row-type">Régul charges copro N-1</td>
-              <td class="row-value">
-                <input type="number" id="regul-charges-copro" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne"></td>
-              <td class="row-type">Solde copro N-1</td>
-              <td class="row-value">
-                <input type="number" id="solde-copro" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">240</td>
-              <td class="row-type strong">Total frais et charges</td>
-              <td class="row-value strong" id="total-frais"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">250</td>
-              <td class="row-type">Intérêts d'emprunt</td>
-              <td class="row-value">
-                <input type="number" id="interets" value="" />
-              </td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne"></td>
-              <td class="row-type strong">Charges taxables (240+250)</td>
-              <td class="row-value strong" id="charges-taxables"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne"></td>
-              <td class="row-type">CSG Déductible (6,8%)</td>
-              <td class="row-value" id="csg"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne"></td>
-              <td class="row-type strong">Total (Charges + CSG)</td>
-              <td class="row-value" id="total-charges"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="ligne">260</td>
-              <td class="row-type strong">Revenus fonciers taxables</td>
-              <td class="row-value strong" id="revenus-taxables"></td>
-              <td class="unit">€</td>
-            </tr>
-          </tbody>
+          <tbody id="reel-tbody"></tbody>
         </table>
       </div>
     </div>

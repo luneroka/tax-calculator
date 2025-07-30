@@ -19,6 +19,7 @@ import {
   renderRentabiliteRows,
   rentabiliteRows,
 } from './view/rentabiliteTable/rentabilite.js';
+import { reelRows, renderReelRows } from './view/reelTable/reel.js';
 
 // --- Render dynamic sections --- //
 // Render Prix d'Achat
@@ -55,6 +56,12 @@ if (impotsTbody) {
 const rentabiliteTbody = document.getElementById('rentabilite-tbody');
 if (rentabiliteTbody) {
   rentabiliteTbody.innerHTML = renderRentabiliteRows(rentabiliteRows);
+}
+
+// Render Reel Table
+const reelTbody = document.getElementById('reel-tbody');
+if (reelTbody) {
+  reelTbody.innerHTML = renderReelRows(reelRows);
 }
 
 // --- Restore values and set up listeners for all ids --- //
