@@ -1,3 +1,6 @@
+/* ===========================
+   RESET & BASE STYLES
+   =========================== */
 * {
   margin: 0;
   padding: 0;
@@ -9,65 +12,15 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+/* ===========================
+   TABLES
+   =========================== */
 table,
 th,
 td {
   border: 1px solid;
   border-collapse: collapse;
   padding: 4px;
-}
-
-#tables-container,
-#toggle-containers {
-  margin: 32px;
-  display: flex;
-  flex-direction: row;
-  gap: 32px;
-}
-
-#infos,
-#rentabilite {
-  width: 100%;
-  max-width: 600px;
-}
-
-#infos table,
-#rentabilite table {
-  width: 100%;
-}
-
-input,
-select {
-  width: 100%;
-  height: 100%;
-  border: none;
-  outline: none;
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-  font-size: 12px;
-  text-align: right;
-}
-
-textarea {
-  resize: none;
-  outline: none;
-  border: none;
-  font-size: 0.7rem;
-}
-
-/* Disable input arrows on Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
-  -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Disable input arrows on Firefox */
-input[type='number'] {
-  appearance: textfield;
-  -moz-appearance: textfield;
-  text-align: right;
 }
 
 th {
@@ -91,11 +44,60 @@ th {
   font-size: 12px;
 }
 
-.row-value textarea {
-  width: 100%;
-  height: 100%;
+.ligne,
+#ligne-title {
+  font-size: 0.7rem;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  background-color: white;
 }
 
+/* ===========================
+   LAYOUT CONTAINERS
+   =========================== */
+#tables-container,
+#toggle-containers {
+  margin: 32px;
+  display: flex;
+  flex-direction: row;
+  gap: 32px;
+}
+
+#infos,
+#rentabilite {
+  width: 100%;
+  max-width: 600px;
+}
+
+#infos table,
+#rentabilite table {
+  width: 100%;
+}
+
+#formulaire-container,
+#comparison-container {
+  display: none;
+  width: 100%;
+  max-width: 600px;
+}
+
+#formulaire-table {
+  width: 100%;
+}
+
+#comparison-table {
+  table-layout: fixed;
+  width: 100%;
+}
+
+#comparison-table td {
+  text-align: center;
+}
+
+/* ===========================
+   SECTION HEADERS
+   =========================== */
 .infos-section {
   text-decoration: underline;
 }
@@ -105,6 +107,49 @@ th {
   text-align: left;
 }
 
+/* ===========================
+   INPUTS & TEXTAREAS
+   =========================== */
+input,
+select {
+  width: 100%;
+  height: 100%;
+  border: none;
+  outline: none;
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  font-size: 12px;
+  text-align: right;
+}
+
+/* Disable input arrows on Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Disable input arrows on Firefox */
+input[type='number'] {
+  appearance: textfield;
+  -moz-appearance: textfield;
+  text-align: right;
+}
+
+.row-value textarea {
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+  resize: none;
+  outline: none;
+  border: none;
+  font-size: 0.7rem;
+}
+
+/* ===========================
+   BUTTONS
+   =========================== */
 #buttons {
   margin-top: 32px;
   width: 100%;
@@ -129,35 +174,9 @@ button#reset-tables:hover {
   color: white;
 }
 
-.ligne,
-#ligne-title {
-  font-size: 0.7rem;
-  font-weight: 300;
-  font-style: italic;
-  text-align: center;
-  background-color: white;
-}
-
-#comparison-container,
-#formulaire-container {
-  display: none;
-  width: 100%;
-  max-width: 600px;
-}
-
-#formulaire-table {
-  width: 100%;
-}
-
-#comparison-table {
-  table-layout: fixed;
-  width: 100%;
-}
-
-#comparison-table td {
-  text-align: center;
-}
-
+/* ===========================
+   RESPONSIVE
+   =========================== */
 @media (max-width: 912px) {
   #tables-container,
   #toggle-containers {
