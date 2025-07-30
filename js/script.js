@@ -11,9 +11,16 @@ import {
 } from './view/infoTable/description.js';
 import { empruntRows, renderEmpruntRows } from './view/infoTable/emprunt.js';
 import { loyerRows, renderLoyerRows } from './view/rentabiliteTable/loyer.js';
+import {
+  impotsRows,
+  renderImpotsRows,
+} from './view/rentabiliteTable/impots.js';
+import {
+  renderRentabiliteRows,
+  rentabiliteRows,
+} from './view/rentabiliteTable/rentabilite.js';
 
 // --- Render dynamic sections --- //
-
 // Render Prix d'Achat
 const prixTBody = document.querySelector('.prix-achat-tbody');
 if (prixTBody) {
@@ -38,6 +45,18 @@ if (loyerTbody) {
   loyerTbody.innerHTML = renderLoyerRows(loyerRows);
 }
 
+// Render Impots
+const impotsTbody = document.getElementById('impots-tbody');
+if (impotsTbody) {
+  impotsTbody.innerHTML = renderImpotsRows(impotsRows);
+}
+
+// Render Rentabilite
+const rentabiliteTbody = document.getElementById('rentabilite-tbody');
+if (rentabiliteTbody) {
+  rentabiliteTbody.innerHTML = renderRentabiliteRows(rentabiliteRows);
+}
+
 // --- Restore values and set up listeners for all ids --- //
 restoreInputs(ids);
 
@@ -46,7 +65,6 @@ updateCalculations();
 updateReelCalculations();
 
 // --- Buttons Events Handlers --- //
-
 // Reset tables
 const button = document.getElementById('reset-tables');
 button.addEventListener('click', () => {

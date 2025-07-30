@@ -72,70 +72,13 @@
           <thead>
             <th class="rentabilite-section" colspan="3">Impôts</th>
           </thead>
-          <tbody>
-            <tr>
-              <td class="row-type">TMI</td>
-              <td class="row-value user-value">
-                <select name="tmi" id="tmi-selector">
-                  <option value="" selected></option>
-                  <option value="0">0</option>
-                  <option value="0.11">11</option>
-                  <option value="0.3">30</option>
-                  <option value="0.41">41</option>
-                  <option value="0.45">45</option>
-                </select>
-              </td>
-              <td class="unit">%</td>
-            </tr>
-            <tr>
-              <td class="row-type">Prélèvements sociaux</td>
-              <td class="row-value user-value">
-                <select name="prelevements-sociaux" id="prelevements-sociaux">
-                  <option value="" selected></option>
-                  <option value="17.2">17,2</option>
-                </select>
-              </td>
-              <td class="unit">%</td>
-            </tr>
-            <tr>
-              <td class="row-type">Régime d'imposition</td>
-              <td class="row-value user-value" id="regime-imposition">
-                <select name="regime-imposition" id="regime-selector">
-                  <option value="" selected></option>
-                  <option value="micro-foncier">Micro-Foncier</option>
-                  <option value="reel">Réel</option>
-                </select>
-              </td>
-              <td class="unit"></td>
-            </tr>
-            <tr>
-              <td class="row-type">Impôt annuel</td>
-              <td class="row-value" id="impot-annuel"></td>
-              <td class="unit">€</td>
-            </tr>
-          </tbody>
+          <tbody id="impots-tbody"></tbody>
 
           <!-- SECTION RENTABILITÉ -->
           <thead>
             <th class="rentabilite-section" colspan="3">Rentabilité</th>
           </thead>
-          <tbody>
-            <tr>
-              <td class="row-type">Rendement net</td>
-              <td class="row-value" id="rendement"></td>
-              <td class="unit">%</td>
-            </tr>
-            <tr>
-              <td class="row-type">Cashflow</td>
-              <td class="row-value" id="cashflow"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Gain/Perte nette annuelle</td>
-              <td class="row-value" id="gain-perte"></td>
-              <td class="unit">€</td>
-            </tr>
-          </tbody>
+          <tbody id="rentabilite-tbody"></tbody>
         </table>
       </div>
 
