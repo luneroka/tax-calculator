@@ -152,6 +152,7 @@ export function renderReelRows(rows) {
       }
       return `
      <tr>
+      <td class='ligne'>${row.ligne}</td>
       <td class="row-type">${
         row.strong ? '<strong>' + row.label + '</strong>' : row.label
       }</td>
