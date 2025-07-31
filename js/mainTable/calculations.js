@@ -45,7 +45,7 @@ export function calculateRendement(
   ).toFixed(2);
 }
 
-export function calculateCashflow(
+export function calculateCashflowMensuel(
   loyer,
   charges,
   chargesCopro,
@@ -58,6 +58,6 @@ export function calculateCashflow(
   );
 }
 
-export function calculateGainPerte(cashflow) {
-  return cashflow * 12;
+export function calculateCashflowAnnuel(cashflowMensuel) {
+  return cashflowMensuel * 12;
 }

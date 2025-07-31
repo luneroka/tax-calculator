@@ -7,8 +7,8 @@ import {
   calculateRevenuHC,
   calculateRevenuCC,
   calculateRendement,
-  calculateCashflow,
-  calculateGainPerte,
+  calculateCashflowMensuel,
+  calculateCashflowAnnuel,
   calculateMicroFoncier,
   calculateReel,
 } from './calculations.js';
@@ -66,7 +66,7 @@ export function updateCalculations() {
     prixAchat
   );
 
-  const cashflow = calculateCashflow(
+  const cashflowMensuel = calculateCashflowMensuel(
     inputs.loyer,
     inputs.charges,
     inputs.chargesCopro,
@@ -75,7 +75,7 @@ export function updateCalculations() {
     mensualite
   );
 
-  const cashflowMicro = calculateCashflow(
+  const cashflowMensuelMicro = calculateCashflowMensuel(
     inputs.loyer,
     inputs.charges,
     inputs.chargesCopro,
@@ -83,7 +83,7 @@ export function updateCalculations() {
     impotMicro,
     mensualite
   );
-  const cashflowReel = calculateCashflow(
+  const cashflowMensuelReel = calculateCashflowMensuel(
     inputs.loyer,
     inputs.charges,
     inputs.chargesCopro,
@@ -91,9 +91,9 @@ export function updateCalculations() {
     impotReel,
     mensualite
   );
-  const gainPerte = calculateGainPerte(cashflow);
-  const gainPerteMicro = calculateGainPerte(cashflowMicro);
-  const gainPerteReel = calculateGainPerte(cashflowReel);
+  const cashflowAnnuel = calculateCashflowAnnuel(cashflowMensuel);
+  const cashflowAnnuelMicro = calculateCashflowAnnuel(cashflowMensuelMicro);
+  const cashflowAnnuelReel = calculateCashflowAnnuel(cashflowMensuelReel);
 
   // Display Elements
   setOutput('#prix-achat', prixAchat);
@@ -107,10 +107,10 @@ export function updateCalculations() {
   setOutput('#rendement-micro', rendementMicro);
   setOutput('#rendement-reel', rendementReel);
   setOutput('#mensualite', mensualite, true);
-  setOutput('#cashflow', cashflow, true);
-  setOutput('#cashflow-micro', cashflowMicro, true);
-  setOutput('#cashflow-reel', cashflowReel, true);
-  setOutput('#gain-perte', gainPerte, true);
-  setOutput('#gain-perte-micro', gainPerteMicro, true);
-  setOutput('#gain-perte-reel', gainPerteReel, true);
+  setOutput('#cashflow-mensuel', cashflowMensuel, true);
+  setOutput('#cashflow-m-micro', cashflowMensuelMicro, true);
+  setOutput('#cashflow-m-reel', cashflowMensuelReel, true);
+  setOutput('#cashflow-annuel', cashflowAnnuel, true);
+  setOutput('#cashflow-a-micro', cashflowAnnuelMicro, true);
+  setOutput('#cashflow-a-reel', cashflowAnnuelReel, true);
 }

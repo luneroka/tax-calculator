@@ -6,14 +6,14 @@ export const rentabiliteRows = [
     unit: '%',
   },
   {
-    label: 'Cashflow',
-    id: 'cashflow',
+    label: 'Cashflow mensuel',
+    id: 'cashflow-mensuel',
     type: 'td',
     unit: '€',
   },
   {
-    label: 'Gain/Perte nette annuelle',
-    id: 'gain-perte',
+    label: 'Cashflow annuel',
+    id: 'cashflow-annuel',
     type: 'td',
     unit: '€',
   },

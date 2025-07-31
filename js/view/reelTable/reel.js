@@ -146,7 +146,7 @@ export function renderReelRows(rows) {
       if (row.type === 'input') {
         inputHtml = `<input type="${row.inputType}" id="${row.id}" value="" />`;
       } else if (row.type === 'td' && row.strong) {
-        inputHtml = `<strong id="${row.id}"></strong>`;
+        inputHtml = `<span class="strong" id="${row.id}"></span>`;
       } else if (row.type === 'td' && !row.strong) {
         inputHtml = `<span id="${row.id}"></span>`;
       }
@@ -154,7 +154,7 @@ export function renderReelRows(rows) {
      <tr>
       <td class='ligne'>${row.ligne}</td>
       <td class="row-type">${
-        row.strong ? '<strong>' + row.label + '</strong>' : row.label
+        row.strong ? '<span class="strong">' + row.label + '</span>' : row.label
       }</td>
       <td class="row-value">${inputHtml}</td>
       <td class="unit">${row.unit || ''}</td>

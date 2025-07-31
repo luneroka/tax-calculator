@@ -6,7 +6,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap"
       rel="stylesheet"
     />
     <link rel="stylesheet" href="styles.css" />
@@ -22,7 +22,7 @@
         <table>
           <!-- SECTION LOCALISATION -->
           <thead>
-            <th class="infos-section" colspan="3">Localisation</th>
+            <th class="section-title-center" colspan="3">Localisation</th>
           </thead>
           <tbody>
             <tr>
@@ -35,19 +35,19 @@
 
           <!-- SECTION DESCRIPTION -->
           <thead>
-            <th class="infos-section" colspan="3">Description</th>
+            <th class="section-title-center" colspan="3">Description</th>
           </thead>
           <tbody id="description-tbody"></tbody>
 
           <!-- SECTION PRIX D'ACHAT -->
           <thead>
-            <th class="infos-section" colspan="3">Prix d'achat</th>
+            <th class="section-title-center" colspan="3">Prix d'achat</th>
           </thead>
           <tbody class="prix-achat-tbody"></tbody>
 
           <!-- SECTION EMPRUNT -->
           <thead>
-            <th class="infos-section" colspan="3">Emprunt</th>
+            <th class="section-title-center" colspan="3">Emprunt</th>
           </thead>
           <tbody id="emprunt-tbody"></tbody>
         </table>
@@ -58,20 +58,20 @@
         <table>
           <!-- SECTION LOYER -->
           <thead>
-            <th class="rentabilite-section">Loyer</th>
-            <th colspan="2">2025</th>
+            <th class="section-title-left">Loyer</th>
+            <th class="section-title-center" colspan="2">2025</th>
           </thead>
           <tbody id="loyer-tbody"></tbody>
 
           <!-- SECTION IMPOT -->
           <thead>
-            <th class="rentabilite-section" colspan="3">Impôts</th>
+            <th class="section-title-left" colspan="3">Impôts</th>
           </thead>
           <tbody id="impots-tbody"></tbody>
 
           <!-- SECTION RENTABILITÉ -->
           <thead>
-            <th class="rentabilite-section" colspan="3">Rentabilité</th>
+            <th class="section-title-left" colspan="3">Rentabilité</th>
           </thead>
           <tbody id="rentabilite-tbody"></tbody>
         </table>
@@ -90,8 +90,8 @@
         <table id="formulaire-table">
           <thead>
             <th id="ligne-title">Ligne</th>
-            <th class="rentabilite-section">Formulaire 2044</th>
-            <th colspan="2">2025</th>
+            <th class="section-title-blue-left">Formulaire 2044</th>
+            <th class="section-title-blue-center" colspan="2">2025</th>
           </thead>
           <tbody id="reel-tbody"></tbody>
         </table>
@@ -102,8 +102,8 @@
           <thead>
             <tr>
               <th style="width: 33%"></th>
-              <th>Micro-foncier</th>
-              <th>Réel</th>
+              <th class="section-title-center">Micro-foncier</th>
+              <th class="section-title-center">Réel</th>
               <th style="width: 10%"></th>
             </tr>
           </thead>
@@ -121,15 +121,15 @@
               <td class="unit">%</td>
             </tr>
             <tr>
-              <td class="row-type">Cashflow</td>
-              <td class="row-value" id="cashflow-micro"></td>
-              <td class="row-value" id="cashflow-reel"></td>
+              <td class="row-type">Cashflow mensuel</td>
+              <td class="row-value" id="cashflow-m-micro"></td>
+              <td class="row-value" id="cashflow-m-reel"></td>
               <td class="unit">€</td>
             </tr>
             <tr>
-              <td class="row-type">Gain/Perte nette annuelle</td>
-              <td class="row-value" id="gain-perte-micro"></td>
-              <td class="row-value" id="gain-perte-reel"></td>
+              <td class="row-type">Cashflow annuel</td>
+              <td class="row-value" id="cashflow-a-micro"></td>
+              <td class="row-value" id="cashflow-a-reel"></td>
               <td class="unit">€</td>
             </tr>
           </tbody>
