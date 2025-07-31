@@ -40,9 +40,13 @@ export function calculateRendement(
   impot,
   prixAchat
 ) {
-  return Number(
-    ((revenuCC - (chargesCopro + fonciere + impot)) / prixAchat) * 100
-  ).toFixed(2);
+  if (impot === 0 || impot === null || impot === undefined) {
+    return '';
+  } else {
+    return Number(
+      ((revenuCC - (chargesCopro + fonciere + impot)) / prixAchat) * 100
+    ).toFixed(2);
+  }
 }
 
 export function calculateCashflowMensuel(
@@ -53,11 +57,23 @@ export function calculateCashflowMensuel(
   impot,
   mensualite
 ) {
-  return (
-    loyer + charges - (mensualite + (chargesCopro + fonciere + impot) / 12)
-  );
+  if (impot === 0 || impot === null || impot === undefined) {
+    return '';
+  } else {
+    return (
+      loyer + charges - (mensualite + (chargesCopro + fonciere + impot) / 12)
+    );
+  }
 }
 
 export function calculateCashflowAnnuel(cashflowMensuel) {
-  return cashflowMensuel * 12;
+  if (
+    cashflowMensuel === 0 ||
+    cashflowMensuel === null ||
+    cashflowMensuel === undefined
+  ) {
+    return '';
+  } else {
+    return cashflowMensuel * 12;
+  }
 }
