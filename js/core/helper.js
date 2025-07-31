@@ -62,3 +62,25 @@ export function resetBtn(name, ids) {
     updateReelCalculations();
   });
 }
+
+export function renderSection(sectionName, renderFunction, renderRows) {
+  const elTBody = document.getElementById(`${sectionName}-tbody`);
+  if (elTBody) {
+    elTBody.innerHTML = renderFunction(renderRows);
+  }
+}
+
+export function toggleElement(elementName) {
+  const toggleBtn = document.getElementById(`toggle-${elementName}`);
+  const toggleElement = document.getElementById(`${elementName}-container`);
+  toggleBtn.addEventListener('click', () => {
+    if (
+      toggleElement.style.display === 'none' ||
+      toggleElement.style.display === ''
+    ) {
+      toggleElement.style.display = 'block';
+    } else {
+      toggleElement.style.display = 'none';
+    }
+  });
+}
