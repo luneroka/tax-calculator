@@ -33,3 +33,45 @@ export const ids = [
   'interets',
   'csg',
 ];
+
+export const infoIds = [
+  'adresse',
+  'surface',
+  'pieces',
+  'etage',
+  'ascenseur',
+  'parking-one',
+  'parking-two',
+  'dpe',
+  'chauffage',
+  'construction',
+  'prix',
+  'notaire',
+  'apport',
+  'duree',
+  'taux',
+];
+
+export const rentaIds = [
+  'loyer',
+  'charges',
+  'tmi-selector',
+  'charges-copro',
+  'taxe-fonciere',
+  'prelevements-sociaux',
+  'regime-selector',
+];
+
+export const reelIds = [
+  'frais-gestion',
+  'autres-frais',
+  'assurance-pret',
+  'assurance-pno',
+  'travaux',
+  'reel-taxe-fonciere',
+  'reel-charges-copro',
+  'regul-charges-copro',
+  'solde-copro',
+  'interets',
+  'csg',
+];

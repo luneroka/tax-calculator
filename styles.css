@@ -172,7 +172,7 @@ input[type='number'] {
 /* ===========================
    BUTTONS
    =========================== */
-#buttons {
+.buttons {
   margin-top: 32px;
   width: 100%;
   display: flex;
@@ -186,7 +186,7 @@ button {
   cursor: pointer;
   width: 100%;
   background-color: rgba(217, 217, 217, 0.25);
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-radius: 0;
 }
 
@@ -200,7 +200,7 @@ button#reset-tables {
   font-family: 'Inter', sans-serif;
   font-weight: 300;
   background-color: #ffe5ea;
-  border: 1px solid rgba(139, 0, 0, 0.4);
+  border: 1px solid rgba(139, 0, 0, 0.2);
   color: darkred;
 }
 
@@ -208,6 +208,25 @@ button#reset-tables:hover {
   background-color: lightpink;
   color: darkred;
   border: 0.5px solid darkred;
+  box-shadow: 0 2px 8px rgba(220, 20, 60, 0.1);
+  transition: background 0.2s, box-shadow 0.2s;
+}
+
+button#reset-info,
+button#reset-renta {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-top: none;
+}
+
+button#reset-reel {
+  background-color: #dfe3f3;
+  color: rgb(0, 93, 168);
+  border: 1px solid rgba(0, 93, 168, 0.2);
+  border-top: none;
+}
+
+button#reset-reel:hover {
+  background-color: rgba(0, 93, 168, 0.4);
   box-shadow: 0 2px 8px rgba(220, 20, 60, 0.1);
   transition: background 0.2s, box-shadow 0.2s;
 }

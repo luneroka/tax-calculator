@@ -3,7 +3,7 @@ import { updateReelCalculations } from './reelTable/update.js';
 window.updateCalculations = updateCalculations;
 window.updateReelCalculations = updateReelCalculations;
 import { restoreInputs } from './core/storage.js';
-import { ids } from './core/ids.js';
+import { ids, infoIds, rentaIds, reelIds } from './core/ids.js';
 import { prixRows, renderPrixRows } from './view/infoTable/prix.js';
 import {
   descriptionRows,
@@ -20,6 +20,7 @@ import {
   rentabiliteRows,
 } from './view/rentabiliteTable/rentabilite.js';
 import { reelRows, renderReelRows } from './view/reelTable/reel.js';
+import { resetBtn } from './core/helper.js';
 
 // --- Render dynamic sections --- //
 // Render Prix d'Achat
@@ -72,19 +73,10 @@ updateCalculations();
 updateReelCalculations();
 
 // --- Buttons Events Handlers --- //
-// Reset tables
-const button = document.getElementById('reset-tables');
-button.addEventListener('click', () => {
-  ids.forEach((id) => {
-    const el = document.getElementById(id);
-    if (el) {
-      el.value = '';
-      localStorage.removeItem(id);
-    }
-  });
-  updateCalculations();
-  updateReelCalculations();
-});
+resetBtn('info', infoIds);
+resetBtn('renta', rentaIds);
+resetBtn('reel', reelIds);
+resetBtn('tables', ids);
 
 // Toggle comparison table
 const toggleCompare = document.getElementById('toggle-compare');

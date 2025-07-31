@@ -47,3 +47,18 @@ export function getInputs() {
     interets: Number(document.querySelector('#interets').value),
   };
 }
+
+export function resetBtn(name, ids) {
+  const btn = document.getElementById(`reset-${name}`);
+  btn.addEventListener('click', () => {
+    ids.forEach((id) => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.value = '';
+        localStorage.removeItem(id);
+      }
+    });
+    updateCalculations();
+    updateReelCalculations();
+  });
+}
