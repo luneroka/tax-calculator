@@ -115,7 +115,7 @@ export const reelRows = [
   },
   {
     ligne: '',
-    label: 'CSG Déductible (6,8%)',
+    label: 'CSG Déductible année N+1 (6,8%)',
     id: 'csg',
     type: 'td',
     unit: '€',
