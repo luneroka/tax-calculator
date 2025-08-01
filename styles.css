@@ -10,6 +10,7 @@
 body {
   font-size: 14px;
   font-family: 'Inter', sans-serif;
+  padding: 32px;
 }
 
 /* ===========================
@@ -77,7 +78,6 @@ td {
    =========================== */
 #tables-container,
 #toggle-containers {
-  margin: 32px;
   display: flex;
   flex-direction: row;
   gap: 32px;
@@ -87,12 +87,14 @@ td {
 #rentabilite {
   width: 100%;
   max-width: 600px;
+  height: 100%;
 }
 
 #infos table,
 #rentabilite table,
 #reel-table {
   width: 100%;
+  height: 100%;
 }
 
 #reel-container,
@@ -100,9 +102,11 @@ td {
   display: none;
   width: 100%;
   max-width: 600px;
+  margin-bottom: 32px;
 }
 
 #comparison-table {
+  margin-top: 32px;
   table-layout: fixed;
   width: 100%;
 }
@@ -183,10 +187,10 @@ input[type='number'] {
    BUTTONS
    =========================== */
 .buttons {
-  margin-top: 32px;
-  width: 100%;
+  margin: 32px 0;
+  max-width: 600px;
   display: flex;
-  gap: 16px;
+  gap: 32px;
 }
 
 button {
@@ -248,11 +252,18 @@ button#reset-reel:hover {
    RESPONSIVE
    =========================== */
 @media (max-width: 912px) {
+  body {
+    margin: 32px;
+  }
+
   #tables-container,
   #toggle-containers {
-    margin: 16px;
     display: flex;
     flex-direction: column;
     gap: 16px;
+  }
+
+  #comparison-table {
+    margin-top: 16px;
   }
 }

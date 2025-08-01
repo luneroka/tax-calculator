@@ -78,12 +78,52 @@
         </table>
         <button id="reset-renta">Effacer</button>
 
-        <div class="buttons">
-          <button id="reset-tables">Tout effacer</button>
-          <button id="toggle-comparison">Comparer</button>
-          <button id="toggle-reel">Formulaire 2044</button>
+        <!-- TABLE : COMPARISON -->
+        <div id="comparison-container">
+          <table id="comparison-table">
+            <thead>
+              <tr>
+                <th style="width: 33%"></th>
+                <th class="section-title-center">Micro-foncier</th>
+                <th class="section-title-center">Réel</th>
+                <th style="width: 10%"></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td class="row-type">Impôt annuel</td>
+                <td class="row-value" id="impot-micro"></td>
+                <td class="row-value" id="impot-reel"></td>
+                <td class="unit">€</td>
+              </tr>
+              <tr>
+                <td class="row-type">Rendement net</td>
+                <td class="row-value" id="rendement-micro"></td>
+                <td class="row-value" id="rendement-reel"></td>
+                <td class="unit">%</td>
+              </tr>
+              <tr>
+                <td class="row-type">Cashflow mensuel</td>
+                <td class="row-value" id="cashflow-m-micro"></td>
+                <td class="row-value" id="cashflow-m-reel"></td>
+                <td class="unit">€</td>
+              </tr>
+              <tr>
+                <td class="row-type">Cashflow annuel</td>
+                <td class="row-value" id="cashflow-a-micro"></td>
+                <td class="row-value" id="cashflow-a-reel"></td>
+                <td class="unit">€</td>
+              </tr>
+            </tbody>
+          </table>
         </div>
       </div>
+    </div>
+
+    <div class="buttons">
+      <button id="reset-tables">Tout effacer</button>
+      <button id="toggle-comparison">Comparer</button>
+      <button id="toggle-reel">Formulaire 2044</button>
     </div>
 
     <div id="toggle-containers">
@@ -98,46 +138,6 @@
           <tbody id="reel-tbody"></tbody>
         </table>
         <button id="reset-reel">Effacer</button>
-      </div>
-
-      <!-- TABLE : COMPARISON -->
-      <div id="comparison-container">
-        <table id="comparison-table">
-          <thead>
-            <tr>
-              <th style="width: 33%"></th>
-              <th class="section-title-center">Micro-foncier</th>
-              <th class="section-title-center">Réel</th>
-              <th style="width: 10%"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr>
-              <td class="row-type">Impôt annuel</td>
-              <td class="row-value" id="impot-micro"></td>
-              <td class="row-value" id="impot-reel"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Rendement net</td>
-              <td class="row-value" id="rendement-micro"></td>
-              <td class="row-value" id="rendement-reel"></td>
-              <td class="unit">%</td>
-            </tr>
-            <tr>
-              <td class="row-type">Cashflow mensuel</td>
-              <td class="row-value" id="cashflow-m-micro"></td>
-              <td class="row-value" id="cashflow-m-reel"></td>
-              <td class="unit">€</td>
-            </tr>
-            <tr>
-              <td class="row-type">Cashflow annuel</td>
-              <td class="row-value" id="cashflow-a-micro"></td>
-              <td class="row-value" id="cashflow-a-reel"></td>
-              <td class="unit">€</td>
-            </tr>
-          </tbody>
-        </table>
       </div>
     </div>
   </body>
