@@ -32,31 +32,3 @@ export const impotsRows = [
     unit: '€',
   },
 ];
-
-export function renderImpotsRows(rows) {
-  return rows
-    .map((row) => {
-      let inputHtml = '';
-      if (row.type === 'select') {
-        inputHtml =
-          `<select id="${row.id}">` +
-          row.options.values
-            .map(
-              (val, i) =>
-                `<option value="${val}">${row.options.display[i]}</option>`
-            )
-            .join('') +
-          `</select>`;
-      } else if (row.type === 'td') {
-        inputHtml = `<span id=${row.id}></span>`;
-      }
-      return `
-    <tr>
-      <td class="row-type">${row.label}</td>
-      <td class="row-value">${inputHtml}</td>
-      <td class="unit">${row.unit || ''}</td>
-    </tr>
-    `;
-    })
-    .join('');
-}

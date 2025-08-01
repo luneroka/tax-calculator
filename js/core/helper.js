@@ -63,13 +63,6 @@ export function resetBtn(name, ids) {
   });
 }
 
-export function renderSection(sectionName, renderFunction, renderRows) {
-  const elTBody = document.getElementById(`${sectionName}-tbody`);
-  if (elTBody) {
-    elTBody.innerHTML = renderFunction(renderRows);
-  }
-}
-
 export function toggleElement(elementName) {
   const toggleBtn = document.getElementById(`toggle-${elementName}`);
   const toggleElement = document.getElementById(`${elementName}-container`);
@@ -83,4 +76,48 @@ export function toggleElement(elementName) {
       toggleElement.style.display = 'none';
     }
   });
+}
+
+export function renderRows(rows) {
+  return rows
+    .map((row) => {
+      let inputHtml = '';
+      if (row.type === 'select') {
+        inputHtml =
+          `<select id="${row.id}">` +
+          row.options.values
+            .map(
+              (val, i) =>
+                `<option value="${val}">${row.options.display[i]}</option>`
+            )
+            .join('') +
+          `</select>`;
+      } else if (row.type === 'input') {
+        inputHtml = `<input type="${row.inputType}" id="${row.id}" value="" />`;
+      } else if (row.type === 'td' && row.strong) {
+        inputHtml = `<span class="strong" id="${row.id}"></span>`;
+      } else if (row.type === 'td' && !row.strong) {
+        inputHtml = `<span id="${row.id}"></span>`;
+      }
+      return `
+      <tr>
+        ${row.reel ? `<td class="ligne">${row.ligne}</td>` : ''}
+        <td class="row-type">${
+          row.strong
+            ? '<span class="strong">' + row.label + '</span>'
+            : row.label
+        }</td>
+        <td class="row-value">${inputHtml}</td>
+        <td class="unit">${row.unit || ''}</td>
+      </tr>
+      `;
+    })
+    .join('');
+}
+
+export function renderSection(sectionName, rows) {
+  const elTBody = document.getElementById(`${sectionName}-tbody`);
+  if (elTBody) {
+    elTBody.innerHTML = renderRows(rows);
+  }
 }

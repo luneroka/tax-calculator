@@ -1,5 +1,6 @@
 export const reelRows = [
   {
+    reel: true,
     ligne: '215',
     label: 'Total recettes',
     id: 'recettes',
@@ -8,6 +9,7 @@ export const reelRows = [
     strong: true,
   },
   {
+    reel: true,
     ligne: '221',
     label: 'Frais de gestion',
     id: 'frais-gestion',
@@ -17,6 +19,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '222',
     label: 'Autres frais',
     id: 'autres-frais',
@@ -26,6 +29,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '223',
     label: 'Assurance de prêt',
     id: 'assurance-pret',
@@ -35,6 +39,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '223',
     label: 'Assurance PNO',
     id: 'assurance-pno',
@@ -44,6 +49,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '224',
     label: 'Travaux',
     id: 'travaux',
@@ -53,6 +59,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '227',
     label: 'Taxe foncière (hors TEOM)',
     id: 'reel-taxe-fonciere',
@@ -62,6 +69,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '229',
     label: 'Charges de copro',
     id: 'reel-charges-copro',
@@ -71,6 +79,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '230',
     label: 'Régul charges copro N-1',
     id: 'regul-charges-copro',
@@ -80,6 +89,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '',
     label: 'Solde copro N-1',
     id: 'solde-copro',
@@ -89,6 +99,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '240',
     label: 'Total frais et charges',
     id: 'total-frais',
@@ -97,6 +108,7 @@ export const reelRows = [
     strong: true,
   },
   {
+    reel: true,
     ligne: '250',
     label: "Intérêts d'emprunt",
     id: 'interets',
@@ -106,6 +118,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '',
     label: 'Charges taxables (240+250)',
     id: 'charges-taxables',
@@ -114,6 +127,7 @@ export const reelRows = [
     strong: true,
   },
   {
+    reel: true,
     ligne: '',
     label: 'CSG Déductible année N+1 (6,8%)',
     id: 'csg',
@@ -122,6 +136,7 @@ export const reelRows = [
     strong: false,
   },
   {
+    reel: true,
     ligne: '',
     label: 'Total (Charges + CSG)',
     id: 'total-charges',
@@ -130,6 +145,7 @@ export const reelRows = [
     strong: true,
   },
   {
+    reel: true,
     ligne: '260',
     label: 'Revenus fonciers taxables',
     id: 'revenus-taxables',
@@ -138,28 +154,3 @@ export const reelRows = [
     strong: true,
   },
 ];
-
-export function renderReelRows(rows) {
-  return rows
-    .map((row) => {
-      let inputHtml = '';
-      if (row.type === 'input') {
-        inputHtml = `<input type="${row.inputType}" id="${row.id}" value="" />`;
-      } else if (row.type === 'td' && row.strong) {
-        inputHtml = `<span class="strong" id="${row.id}"></span>`;
-      } else if (row.type === 'td' && !row.strong) {
-        inputHtml = `<span id="${row.id}"></span>`;
-      }
-      return `
-     <tr>
-      <td class='ligne'>${row.ligne}</td>
-      <td class="row-type">${
-        row.strong ? '<span class="strong">' + row.label + '</span>' : row.label
-      }</td>
-      <td class="row-value">${inputHtml}</td>
-      <td class="unit">${row.unit || ''}</td>
-    </tr>
-    `;
-    })
-    .join('');
-}
